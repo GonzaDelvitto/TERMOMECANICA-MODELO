@@ -32,13 +32,17 @@ fetch("./data/servicios.json")
                     </span>
                     <h3>${servicio.title}</h3>
                     <p class="servicio-text">${servicio.description}</p>
-                    <button class="leer-mas">Leer más</button>
+                    <button class="leer-mas" aria-expanded="false" aria-controls="desc-${index}">Leer más</button>
                 </div>
             `;
 
             serviciosGrid.appendChild(card);
 
             const btn = card.querySelector(".leer-mas");
+            const texto = card.querySelector(".servicio-text");
+
+            // Añadir id para aria-controls
+            texto.id = `desc-${index}`;
 
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -49,15 +53,30 @@ fetch("./data/servicios.json")
                     if (c !== card) {
                         c.classList.remove("expandida");
                         const otherBtn = c.querySelector(".leer-mas");
-                        if (otherBtn) otherBtn.textContent = "Leer más";
+                        const otherText = c.querySelector(".servicio-text");
+                        if (otherBtn) {
+                            otherBtn.textContent = "Leer más";
+                            otherBtn.setAttribute("aria-expanded", "false");
+                        }
+                        if (otherText) {
+                            otherText.style.maxHeight = null;
+                        }
                     }
                 });
 
                 // Alternar la expansión de la tarjeta actual
                 const isExpanded = card.classList.toggle("expandida");
 
-                // Cambiar texto del botón según estado
+                // Cambiar texto del botón y aria
                 btn.textContent = isExpanded ? "Leer menos" : "Leer más";
+                btn.setAttribute("aria-expanded", isExpanded.toString());
+
+                // Ajustar max-height para animación suave
+                if (isExpanded) {
+                    texto.style.maxHeight = texto.scrollHeight + "px";
+                } else {
+                    texto.style.maxHeight = null;
+                }
             });
         });
 
@@ -121,3 +140,36 @@ const observer = new IntersectionObserver(entries => {
         }
     });
 }, { threshold: 0.15 });
+
+
+/* ───── CERRAR TARJETAS AL TOCAR AFUERA ───── */
+document.addEventListener("click", (e) => {
+    const expandedCards = document.querySelectorAll(".servicio-card.expandida");
+    let clickedInside = false;
+
+    expandedCards.forEach(card => {
+        if (card.contains(e.target)) {
+            clickedInside = true;
+        }
+    });
+
+    // No cerrar si el click fue en un botón 'leer-mas'
+    if (e.target.classList.contains("leer-mas")) {
+        clickedInside = true;
+    }
+
+    if (!clickedInside) {
+        expandedCards.forEach(card => {
+            card.classList.remove("expandida");
+            const btn = card.querySelector(".leer-mas");
+            const texto = card.querySelector(".servicio-text");
+            if (btn) {
+                btn.textContent = "Leer más";
+                btn.setAttribute("aria-expanded", "false");
+            }
+            if (texto) {
+                texto.style.maxHeight = null;
+            }
+        });
+    }
+});

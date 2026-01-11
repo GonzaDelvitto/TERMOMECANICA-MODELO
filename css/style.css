@@ -310,74 +310,15 @@ section h2 {
     .servicio-card.expandida {
         height: auto; /* <-- para que pueda crecer cuando está expandida */
     }
-
-    .servicio-text {
-        max-height: 4.6em;
-        overflow: hidden;
-        transition: max-height 0.45s ease;
-    }
-
-    /* 🚫 Desactiva hover en mobile */
-    .servicio-card:hover {
-        transform: none !important;
-        box-shadow: none !important;
-    }
-    .servicio-card:hover::after {
-        opacity: 1 !important;
-    }
-    .servicio-card:hover .servicio-content {
-        transform: none !important;
-    }
-
-    /* 🚫 También desactiva hover sobre el texto */
-    .servicio-card:hover .servicio-text {
-        max-height: 4.6em;
-        overflow: hidden;
-    }
-
-    /* ✅ Expansión REAL por click */
-    .servicio-card.expandida .servicio-text {
-        max-height: 9999px;
-        overflow: visible;
-    }
-
-    .servicio-card.expandida .servicio-text::after {
-        opacity: 0;
-    }
-
-    .leer-mas {
-        display: inline-block;
-        margin-top: 0.6rem;
-        position: relative;
-        z-index: 10; /* Para que el botón quede visible pero sin tapar el texto */
-        background: transparent;
-        cursor: pointer;
-        font-size: 0.9rem;
-    }
 }
 
-@media (max-width: 480px) {
-    .servicio-content span {
-        font-size: 2rem;
-    }
-
-    .servicio-content h3 {
-        font-size: 1.15rem;
-    }
-
-    .servicio-content p {
-        font-size: 0.88rem;
-        line-height: 1.45;
-    }
-}
-
-/* ───────── TEXTO CON LEER MÁS ───────── */
+/* ───────── TEXTO CON LEER MÁS (GENERAL) ───────── */
 
 .servicio-text {
     position: relative;
-    max-height: 4.6em; /* ~3 líneas */
+    max-height: 4.6em; /* altura para cortar texto (~3 líneas) */
     overflow: hidden;
-    transition: max-height .45s ease;
+    transition: max-height 0.45s ease;
 }
 
 /* Degradado suave al final del texto */
@@ -394,9 +335,30 @@ section h2 {
         rgba(0,0,0,0)
     );
     pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
-/* Leer más */
+/* Cuando está expandido, se muestra todo el texto y se quita degradado */
+.servicio-card.expandida .servicio-text {
+    max-height: 9999px;
+    overflow: visible;
+}
+
+.servicio-card.expandida .servicio-text::after {
+    opacity: 0;
+}
+
+/* Quita degradado al hover */
+.servicio-card:hover .servicio-text::after {
+    opacity: 0;
+}
+
+/* Animación suave al hover */
+.servicio-card:hover .servicio-content {
+    transform: translateY(-6px);
+}
+
+/* Botón leer más visible y clickeable en todos lados */
 .leer-mas {
     background: none;
     border: none;
@@ -406,42 +368,29 @@ section h2 {
     font-weight: 600;
     color: var(--red);
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
 }
 
-/* Expandido por click */
-.servicio-card.expandida .servicio-text {
-    max-height: 9999px; /* Muestra todo el texto sin cortes */
-    overflow: visible;
-}
-
-.servicio-card.expandida .servicio-text::after {
-    opacity: 0;
-}
-
-/* Quita degradado al expandir */
-.servicio-card:hover .servicio-text::after {
-    opacity: 0;
-}
-
-/* Animación suave del contenido */
-.servicio-card:hover .servicio-content {
-    transform: translateY(-6px);
-}
-
-/* ───────── Mobile (tap friendly) ───────── */
+/* ───────── Ajustes para móvil ───────── */
 @media (max-width: 768px) {
+    /* El texto cortado es un poco más alto */
     .servicio-text {
         max-height: 5.2em;
-        overflow: hidden;
     }
-
-    .servicio-card:hover .servicio-text {
-        max-height: 4.6em;
-        overflow: hidden;
+    
+    .servicio-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
     }
-
-    .leer-mas {
-        font-size: 0.9rem;
+    
+    .servicio-card:hover::after {
+        opacity: 1 !important;
+    }
+    
+    .servicio-card:hover .servicio-content {
+        transform: none !important;
     }
 }
 

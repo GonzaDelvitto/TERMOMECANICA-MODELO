@@ -44,19 +44,20 @@ fetch("./data/servicios.json")
                 e.preventDefault();
                 e.stopPropagation();
 
-                // cerrar las otras
+                // Cerrar otras tarjetas abiertas
                 document.querySelectorAll(".servicio-card.expandida").forEach(c => {
                     if (c !== card) {
                         c.classList.remove("expandida");
-                        c.querySelector(".leer-mas").textContent = "Leer más";
+                        const otherBtn = c.querySelector(".leer-mas");
+                        if (otherBtn) otherBtn.textContent = "Leer más";
                     }
                 });
 
-                // toggle actual
-                card.classList.toggle("expandida");
-                btn.textContent = card.classList.contains("expandida")
-                    ? "Ver menos"
-                    : "Leer más";
+                // Alternar la expansión de la tarjeta actual
+                const isExpanded = card.classList.toggle("expandida");
+
+                // Cambiar texto del botón según estado
+                btn.textContent = isExpanded ? "Leer menos" : "Leer más";
             });
         });
 

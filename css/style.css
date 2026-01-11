@@ -318,6 +318,18 @@ section h2 {
     }
 
     /* 🚫 Desactiva hover en mobile */
+    .servicio-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    .servicio-card:hover::after {
+        opacity: 1 !important;
+    }
+    .servicio-card:hover .servicio-content {
+        transform: none !important;
+    }
+
+    /* 🚫 También desactiva hover sobre el texto */
     .servicio-card:hover .servicio-text {
         max-height: 4.6em;
         overflow: hidden;
@@ -543,7 +555,6 @@ section h2 {
     .diferenciales {
         padding: 2rem 1rem;
     }
-
 
     .diferenciales .servicio-card {
         padding: 1.4rem 1rem 1rem;

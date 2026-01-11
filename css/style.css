@@ -204,6 +204,7 @@ section h2 {
 }
 
 /* ───────────────── SERVICIOS (CARDS CON IMAGEN) ───────────────── */
+
 .servicios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -302,16 +303,18 @@ section h2 {
 
     .servicio-text {
         max-height: 4.6em;
+        overflow: hidden;
     }
 
     /* 🚫 Desactiva hover en mobile */
     .servicio-card:hover .servicio-text {
         max-height: 4.6em;
+        overflow: hidden;
     }
 
     /* ✅ Expansión REAL por click */
     .servicio-card.expandida .servicio-text {
-        max-height: 9999px; /* Cambiado para mostrar todo el texto sin cortes */
+        max-height: 9999px; /* Muestra todo el texto sin cortes */
         overflow: visible;
     }
 
@@ -322,6 +325,9 @@ section h2 {
     .leer-mas {
         display: inline-block;
         margin-top: 0.6rem;
+        position: relative;
+        z-index: 10; /* Para que el botón quede visible pero sin tapar el texto */
+        background: transparent;
     }
 }
 
@@ -339,7 +345,6 @@ section h2 {
         line-height: 1.45;
     }
 }
-
 
 /* ───────── TEXTO CON LEER MÁS ───────── */
 
@@ -378,10 +383,9 @@ section h2 {
     cursor: pointer;
 }
 
-
 /* Expandido por click */
 .servicio-card.expandida .servicio-text {
-    max-height: 9999px; /* Cambiado para mostrar todo el texto sin cortes */
+    max-height: 9999px; /* Muestra todo el texto sin cortes */
     overflow: visible;
 }
 
@@ -403,14 +407,16 @@ section h2 {
 @media (max-width: 768px) {
     .servicio-text {
         max-height: 5.2em;
+        overflow: hidden;
     }
 
     .servicio-card:hover .servicio-text {
         max-height: 4.6em;
+        overflow: hidden;
     }
+
     .leer-mas {
         font-size: 0.9rem;
-       
     }
 }
 
@@ -525,7 +531,7 @@ section h2 {
     .diferenciales {
         padding: 2rem 1rem;
     }
-    
+
 
     .diferenciales .servicio-card {
         padding: 1.4rem 1rem 1rem;

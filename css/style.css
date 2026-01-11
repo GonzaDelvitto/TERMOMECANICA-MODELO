@@ -215,7 +215,7 @@ section h2 {
 
 .servicio-card {
     position: relative;
-    height: 380px;
+    height: 380px; /* altura fija para desktop */
     border-radius: 18px;
     overflow: hidden;
     display: flex;
@@ -301,9 +301,20 @@ section h2 {
 /* ───────── Mobile adjustments ───────── */
 @media (max-width: 768px) {
 
+    .servicio-card {
+        height: auto; /* <-- quitamos la altura fija para que crezca */
+        align-items: flex-start; /* para que el contenido quede arriba */
+        padding-bottom: 1.2rem; /* un poco de espacio debajo */
+    }
+
+    .servicio-card.expandida {
+        height: auto; /* <-- para que pueda crecer cuando está expandida */
+    }
+
     .servicio-text {
         max-height: 4.6em;
         overflow: hidden;
+        transition: max-height 0.45s ease;
     }
 
     /* 🚫 Desactiva hover en mobile */
@@ -314,7 +325,7 @@ section h2 {
 
     /* ✅ Expansión REAL por click */
     .servicio-card.expandida .servicio-text {
-        max-height: 9999px; /* Muestra todo el texto sin cortes */
+        max-height: 9999px;
         overflow: visible;
     }
 
@@ -328,6 +339,8 @@ section h2 {
         position: relative;
         z-index: 10; /* Para que el botón quede visible pero sin tapar el texto */
         background: transparent;
+        cursor: pointer;
+        font-size: 0.9rem;
     }
 }
 
@@ -419,7 +432,6 @@ section h2 {
         font-size: 0.9rem;
     }
 }
-
 
 /* ───────────────── DIFERENCIALES  ───────────────── */
 
@@ -554,9 +566,6 @@ section h2 {
     }
 }
 
-
-
-
 /* ───────────────── CONTACTO ───────────────── */
 .contacto {
     text-align: center;
@@ -622,8 +631,11 @@ section h2 {
         padding: 0.8rem 0;
     }
 
+    /* Ajuste altura card en móvil para evitar overflow */
     .servicio-card {
-        height: 300px;
+        height: auto; /* <-- altura auto para móviles */
+        align-items: flex-start; /* contenido arriba */
+        padding-bottom: 1.2rem;
     }
 }
 

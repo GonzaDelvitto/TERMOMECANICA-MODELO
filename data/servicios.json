@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Soluciones Profesionales en Termomecánica",
+    "description": "Más de 30 años garantizando seguridad, eficiencia y rendimiento en sistemas térmicos para consorcios e industrias.",
+    "ctaText": "Consultar por WhatsApp",
+    "ctaLink": "https://wa.me/5491167309354"
+  },
+
+"nosotros": {
+  "title": "Sobre Nosotros",
+  "text": "Brindamos soluciones integrales orientadas a garantizar la operatividad continua de sistemas de calefacción y climatización de gran escala, con foco en la eficiencia, la seguridad y la confiabilidad operativa. Nuestro trabajo se apoya en un enfoque técnico preciso, orientado a asegurar el correcto funcionamiento de instalaciones críticas y a optimizar el rendimiento de cada sistema.\n\nNuestra empresa es la evolución del legado técnico de José Luis Cosentino, cuya trayectoria de más de 30 años en el rubro sentó las bases de conocimiento y experiencia que dieron origen, en el año 2005, a la unidad operativa actual. Ese recorrido consolidó una forma de trabajo basada en el criterio técnico, la resolución eficiente de problemas complejos y la búsqueda de soluciones duraderas.\n\nActualmente, bajo la dirección de Esteban Cosentino, abordamos cada proyecto con un alto estándar técnico, responsabilidad profesional y compromiso a largo plazo con cada cliente. Trabajamos de manera cercana y transparente, adaptándonos a las necesidades específicas de cada instalación y priorizando siempre la seguridad operativa, la eficiencia energética y la confiabilidad en el tiempo."
+},
+
+
+  "servicios": {
+    "title": "Áreas de Especialización",
+    "items": [
+      {
+        "icon": "bi-fire",
+        "title": "Sistemas Centrales de Calefacción y Agua Caliente",
+        "description": "Ofrecemos soluciones completas para el correcto funcionamiento y la optimización de sistemas térmicos centrales. Realizamos mantenimiento y reparación de calderas, termotanques industriales y tanques intermediarios, asegurando un rendimiento eficiente y seguro. Además, intervenimos en emisores de calor como losa radiante y radiadores, y llevamos a cabo la renovación de cañerías de calefacción utilizando materiales de alta resistencia y durabilidad.",
+        "image": "/img/sistemas.png"
+      },
+      {
+        "icon": "bi-lightning-charge",
+        "title": "Ingeniería de Combustión y Electrónica",
+        "description": "Aplicamos ingeniería especializada para mejorar la eficiencia energética y prolongar la vida útil de los equipos. Realizamos service, calibración y reacondicionamiento de quemadores, optimizando el consumo de combustible. También modernizamos sistemas mediante adaptaciones electrónicas y eléctricas, y brindamos soporte técnico en tableros y conexiones asociadas a la termomecánica.",
+        "image": "/img/ingenieria.png"
+      },
+      {
+        "icon": "bi-droplet",
+        "title": "Climatización y Control Inteligente",
+        "description": "Desarrollamos soluciones de climatización orientadas al confort y la automatización. Instalamos y mantenemos sistemas térmicos para piscinas, y implementamos controles inteligentes que permiten automatizar y gestionar de forma eficiente la operación de piscinas y sistemas de calefacción, mejorando el rendimiento y reduciendo costos operativos.",
+        "image": "/img/climatizacion.png"
+      }
+    ]
+  },
+
+  "diferenciales": {
+    "title": "¿Por Qué Elegirnos?",
+    "items": [
+      "Más de 30 años de experiencia aplicada a sistemas térmicos",
+      "Diagnóstico técnico preciso, sin métodos de prueba y error",
+      "Resolución eficiente de fallas complejas",
+      "Compromiso con la seguridad operativa y la eficiencia energética"
+    ]
+  },
+
+  "contacto": {
+    "title": "¿Necesita Asesoramiento?",
+    "text": "Consultanos sobre nuestros servicios. Analizamos tu necesidad y te damos una solución a medida.",
+    "ctaText": "Hablar con un especialista",
+    "ctaLink": "https://wa.me/5491167309354"
+  },
+
+  "footer": {
+    "text": "© 2026 Cosentino · Termomecánica"
+  },
+
+  "whatsapp": {
+    "link": "https://wa.me/5491167309354"
+  }
+}

@@ -18,20 +18,20 @@
       {
         "icon": "bi-fire",
         "title": "Sistemas Centrales de Calefacción y Agua Caliente",
-        "description": "Ofrecemos soluciones completas para el correcto funcionamiento y la optimización de sistemas térmicos centrales. Realizamos mantenimiento y reparación de calderas, termotanques industriales y tanques intermediarios, asegurando un rendimiento eficiente y seguro. Además, intervenimos en emisores de calor como losa radiante y radiadores, y llevamos a cabo la renovación de cañerías de calefacción utilizando materiales de alta resistencia y durabilidad.",
-        "image": "/img/sistemas.png"
+        "description": "Ofrecemos soluciones completas para el correcto funcionamiento y la optimización de sistemas térmicos centrales. Realizamos mantenimiento y reparación de calderas, termotanques industriales y tanques intermediarios, asegurando un rendimiento eficiente y seguro. Además, intervenimos en emisores de calor como losa radiante y radiadores, y llevamos a cabo la renovación de cañerías de calefacción utilizando materiales de alta resistencia.",
+        "image": "../img/sistemas.png"
       },
       {
         "icon": "bi-lightning-charge",
         "title": "Ingeniería de Combustión y Electrónica",
         "description": "Aplicamos ingeniería especializada para mejorar la eficiencia energética y prolongar la vida útil de los equipos. Realizamos service, calibración y reacondicionamiento de quemadores, optimizando el consumo de combustible. También modernizamos sistemas mediante adaptaciones electrónicas y eléctricas, y brindamos soporte técnico en tableros y conexiones asociadas a la termomecánica.",
-        "image": "/img/ingenieria.png"
+        "image": "../img/ingenieria.png"
       },
       {
         "icon": "bi-droplet",
         "title": "Climatización y Control Inteligente",
         "description": "Desarrollamos soluciones de climatización orientadas al confort y la automatización. Instalamos y mantenemos sistemas térmicos para piscinas, y implementamos controles inteligentes que permiten automatizar y gestionar de forma eficiente la operación de piscinas y sistemas de calefacción, mejorando el rendimiento y reduciendo costos operativos.",
-        "image": "/img/climatizacion.png"
+        "image": "../img/climatizacion.png"
       }
     ]
   },

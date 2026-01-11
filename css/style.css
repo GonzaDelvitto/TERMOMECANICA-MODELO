@@ -1,4 +1,4 @@
- /* ───────────────── VARIABLES ───────────────── */    
+/* ───────────────── VARIABLES ───────────────── */    
 :root {
     --black: #000;
     --dark: #0f0f0f;
@@ -220,7 +220,6 @@ section h2 {
     display: flex;
     align-items: flex-end;
 
-    /* 🔥 ACA ESTÁ LA CLAVE */
     background:
         linear-gradient(
             to top,
@@ -300,17 +299,29 @@ section h2 {
 
 /* ───────── Mobile adjustments ───────── */
 @media (max-width: 768px) {
-    .servicio-card {
-        height: auto;
-        min-height: 340px;
+
+    .servicio-text {
+        max-height: 4.6em;
     }
 
-    .servicio-content {
-        padding: 1.8rem;
+    /* 🚫 Desactiva hover en mobile */
+    .servicio-card:hover .servicio-text {
+        max-height: 4.6em;
     }
 
-    .servicio-content p {
-        font-size: 0.9rem;
+    /* ✅ Expansión REAL por click */
+    .servicio-card.expandida .servicio-text {
+        max-height: 9999px; /* Cambiado para mostrar todo el texto sin cortes */
+        overflow: visible;
+    }
+
+    .servicio-card.expandida .servicio-text::after {
+        opacity: 0;
+    }
+
+    .leer-mas {
+        display: inline-block;
+        margin-top: 0.6rem;
     }
 }
 
@@ -328,6 +339,7 @@ section h2 {
         line-height: 1.45;
     }
 }
+
 
 /* ───────── TEXTO CON LEER MÁS ───────── */
 
@@ -367,22 +379,10 @@ section h2 {
 }
 
 
-.leer-mas {
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-
-/* Expandir por hover O por click */
-/* .servicio-card:hover .servicio-text,
-.servicio-card.expandida .servicio-text {
-    max-height: 4.6em;
-} */
-
 /* Expandido por click */
 .servicio-card.expandida .servicio-text {
-    max-height: 18em;
+    max-height: 9999px; /* Cambiado para mostrar todo el texto sin cortes */
+    overflow: visible;
 }
 
 .servicio-card.expandida .servicio-text::after {
@@ -410,6 +410,7 @@ section h2 {
     }
     .leer-mas {
         font-size: 0.9rem;
+       
     }
 }
 
@@ -418,48 +419,40 @@ section h2 {
 
 .diferenciales {
     background: linear-gradient(135deg, #0a0a0a, #111);
+    padding: 3rem 1.5rem;
+}
+
+.diferenciales .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+    align-items: stretch;
 }
 
 .diferenciales .servicio-card {
     position: relative;
-    height: auto;
     background: #151515;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3.2rem 1.8rem 2.2rem;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 14px 28px rgba(0,0,0,.45);
+    padding: 2.2rem 1.6rem 1.8rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     text-align: center;
-    overflow: visible; /* dejamos salir el número */
-    transition: transform .35s ease, box-shadow .35s ease;
+    overflow: visible;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    height: auto; /* Que se ajuste al contenido */
 }
 
 .diferenciales .servicio-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 42px rgba(0,0,0,.6);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Contenido */
-.diferenciales .servicio-content {
-    padding: 0;
-}
-
-.diferenciales .servicio-content p {
-    font-size: 0.95rem;
-    color: var(--gray);
-    line-height: 1.5;
-    font-weight: 500;
-}
-
-/* Número en el borde */
+/* Número arriba centrado, tamaño original */
 .diferenciales .servicio-card::before {
     content: attr(data-num);
     position: absolute;
-    top: -18px;
+    top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -471,50 +464,90 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 15px rgba(192,0,0,.6);
+    box-shadow: 0 6px 15px rgba(192, 0, 0, 0.6);
+    user-select: none;
+    transition: transform 0.3s ease;
 }
 
-/* Grid más prolijo en diferenciales */
-.diferenciales .servicios-grid {
-    align-items: stretch;
-}
-
-/* Evita que el número tape contenido */
-.diferenciales .servicio-card {
-    padding-top: 3.5rem;
-}
-
-/* Número apoyado en el borde */
-.diferenciales .servicio-card::before {
-    top: 0;
-    transform: translate(-50%, -50%);
-}
-
-/* Feedback visual sutil */
 .diferenciales .servicio-card:hover::before {
     transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* ───────────────── DIFERENCIALES · MOBILE ───────────────── */
-@media (max-width: 480px) {
+/* Contenido */
+.diferenciales .servicio-content {
+    padding: 0;
+    margin-top: 1rem;
+}
 
+.diferenciales .servicio-content h3 {
+    color: #e63946;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.diferenciales .servicio-content p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .diferenciales .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
     .diferenciales .servicio-card {
-        padding: 2.6rem 1.1rem 1.8rem; /* 🔽 menos alto */
-        border-radius: 14px;
+        padding: 1.8rem 1.3rem 1.4rem;
+    }
+    
+    .diferenciales .servicio-card::before {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .diferenciales .servicio-content h3 {
+        font-size: 1.15rem;
     }
 
     .diferenciales .servicio-content p {
-        font-size: 0.95rem;           /* 🔼 texto más presente */
-        line-height: 1.6;
-        color: #d0d0d0;
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .diferenciales {
+        padding: 2rem 1rem;
+    }
+    
+
+    .diferenciales .servicio-card {
+        padding: 1.4rem 1rem 1rem;
     }
 
     .diferenciales .servicio-card::before {
-        width: 34px;
-        height: 34px;
-        font-size: 0.85rem;
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .diferenciales .servicio-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .diferenciales .servicio-content p {
+        font-size: 0.8rem;
+        color: #b0b0b0;
+        line-height: 1.2;
     }
 }
+
 
 
 

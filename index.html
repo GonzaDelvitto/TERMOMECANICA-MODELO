@@ -1,115 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   <title>Cosentino Termomecánica | Calderas, Calefacción y Automatización</title>
+    <title>Cosentino Termomecánica | Calderas, Calefacción y Automatización</title>
 
-<meta name="description" content="Cosentino Termomecánica. Más de 50 años de experiencia en mantenimiento de calderas, calefacción central, ingeniería de combustión y automatización térmica.">
-<meta name="keywords" content="termomecánica, calderas, calefacción central, service de calderas, ingeniería térmica">
-<meta name="author" content="Cosentino Termomecánica">
+    <meta name="description" content="Cosentino Termomecánica. Más de 50 años de experiencia en mantenimiento de calderas, calefacción central, ingeniería de combustión y automatización térmica." />
+    <meta name="keywords" content="termomecánica, calderas, calefacción central, service de calderas, ingeniería térmica" />
+    <meta name="author" content="Cosentino Termomecánica" />
 
-<!-- Open Graph (para compartir links) -->
-<meta property="og:title" content="Cosentino Termomecánica">
-<meta property="og:description" content="Especialistas en calderas, calefacción y automatización térmica con más de 50 años de experiencia.">
-<meta property="og:type" content="website">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cosentino Termomecánica" />
+    <meta property="og:description" content="Especialistas en calderas, calefacción y automatización térmica con más de 50 años de experiencia." />
+    <meta property="og:type" content="website" />
 
     <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
     <!-- ICONOS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Animación humo CSS -->
+    <style>
+      /* Contenedor del humo, fijo detrás de todo */
+      .humo-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 0;
+        overflow: visible;
+        background: transparent;
+      }
+
+      /* SVG ocupa todo el contenedor */
+      .humo {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      /* Animaciones para las bolitas de humo */
+      .smoke1, .smoke2, .smoke3 {
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        transform-origin: center bottom;
+        filter: blur(6px);
+        opacity: 0.6;
+      }
+
+      /* Movimiento vertical y escala para simular subida de humo */
+      .smoke1 {
+        animation-name: humo1;
+        animation-duration: 6s;
+      }
+      .smoke2 {
+        animation-name: humo2;
+        animation-duration: 7.5s;
+        animation-delay: 1.5s;
+      }
+      .smoke3 {
+        animation-name: humo3;
+        animation-duration: 9s;
+        animation-delay: 3s;
+      }
+
+      @keyframes humo1 {
+        0% { transform: translateY(0) scale(1); opacity: 0.6; }
+        100% { transform: translateY(-150px) scale(1.4); opacity: 0; }
+      }
+
+      @keyframes humo2 {
+        0% { transform: translateY(0) scale(1); opacity: 0.6; }
+        100% { transform: translateY(-180px) scale(1.6); opacity: 0; }
+      }
+
+      @keyframes humo3 {
+        0% { transform: translateY(0) scale(1); opacity: 0.6; }
+        100% { transform: translateY(-200px) scale(1.8); opacity: 0; }
+      }
+    </style>
 </head>
 
 <body>
 
-<header class="header">
+  <!-- Contenedor del humo animado -->
+  <div class="humo-container" aria-hidden="true" >
+    <svg class="humo" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" >
+      <defs>
+        <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="white" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle class="smoke1" cx="100" cy="180" r="20" fill="url(#grad)" />
+      <circle class="smoke2" cx="130" cy="170" r="25" fill="url(#grad)" />
+      <circle class="smoke3" cx="160" cy="150" r="30" fill="url(#grad)" />
+    </svg>
+  </div>
+
+  <header class="header">
     <div class="container">
 
-        <div class="logo-wrapper">
-            <h1 class="logo logo-cosentino">
-                C
-                <span class="logo-o">
-                    <span class="flame"><i class="bi bi-fire"></i></span>
-                </span>
-                SENTINO
-            </h1>
-            <p class="logo-sub">TERMOMECÁNICA · CALEFACCIÓN</p>
+      <div class="logo-wrapper">
+        <h1 class="logo logo-cosentino">
+          C
+          <span class="logo-o">
+            <dotlottie-wc
+              class="logo-flame"
+              src="https://lottie.host/fb52a071-5fdb-4444-ac94-49684ed8ed0b/3KgLa1YgoJ.lottie"
+              autoplay
+              loop
+            ></dotlottie-wc>
+          </span>
+          SENTINO
+        </h1>
+        <p class="logo-sub">TERMOMECÁNICA · CALEFACCIÓN</p>
+      </div>
+
+      <nav class="nav">
+        <button class="menu-toggle" id="menuToggle">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#contacto">Contacto</a>
         </div>
-
-        <nav class="nav">
-            <button class="menu-toggle" id="menuToggle">
-                <i class="bi bi-list"></i>
-            </button>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#inicio">Inicio</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-        </nav>
+      </nav>
 
     </div>
-</header>
+  </header>
 
-<main>
+  <main>
 
     <section class="hero" id="inicio">
-        <div class="container">
-            <h2 id="heroTitle"></h2>
-            <p id="heroDescription"></p>
-            <a id="heroCta" target="_blank" class="btn-primary"></a>
-        </div>
+      <div class="container">
+        <h2 id="heroTitle"></h2>
+        <p id="heroDescription"></p>
+        <a id="heroCta" target="_blank" class="btn-primary"></a>
+      </div>
     </section>
 
     <section class="nosotros" id="nosotros">
-        <div class="container">
-            <h2 id="nosotrosTitle"></h2>
-            <p id="nosotrosText"></p>
-        </div>
+      <div class="container">
+        <h2 id="nosotrosTitle"></h2>
+        <p id="nosotrosText"></p>
+      </div>
     </section>
 
     <section class="servicios" id="servicios">
-        <div class="container">
-            <h2 id="serviciosTitle"></h2>
-            <div class="servicios-grid" id="serviciosGrid"></div>
-        </div>
+      <div class="container">
+        <h2 id="serviciosTitle"></h2>
+        <div class="servicios-grid" id="serviciosGrid"></div>
+      </div>
     </section>
 
     <section class="diferenciales">
-        <div class="container">
-            <h2 id="diferencialesTitle"></h2>
-            <div class="servicios-grid" id="diferencialesGrid"></div>
-        </div>
+      <div class="container">
+        <h2 id="diferencialesTitle"></h2>
+        <div class="servicios-grid" id="diferencialesGrid"></div>
+      </div>
     </section>
 
     <section class="contacto" id="contacto">
-        <div class="container">
-            <h2 id="contactoTitle"></h2>
-            <p id="contactoText"></p>
-            <a id="contactoCta" target="_blank" class="btn-primary"></a>
-        </div>
+      <div class="container">
+        <h2 id="contactoTitle"></h2>
+        <p id="contactoText"></p>
+        <a id="contactoCta" target="_blank" class="btn-primary"></a>
+      </div>
     </section>
 
-</main>
+  </main>
 
-<footer class="footer">
+  <footer class="footer">
     <div class="container">
-        <p id="footerText"></p>
+      <p id="footerText"></p>
     </div>
-</footer>
+  </footer>
 
-<a id="whatsappFloat" class="whatsapp-float" target="_blank">
+  <a id="whatsappFloat" class="whatsapp-float" target="_blank">
     <i class="bi bi-whatsapp"></i>
-</a>
+  </a>
 
-<script src="./js/main.js"></script>
+  <!-- JS -->
+  <script src="./js/main.js"></script>
+
+  <!-- LOTTIE -->
+  <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+    type="module"
+  ></script>
 
 </body>
 </html>

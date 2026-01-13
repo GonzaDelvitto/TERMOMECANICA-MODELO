@@ -1,4 +1,4 @@
-/* ───────────────── VARIABLES ───────────────── */    
+  /* ───────────────── VARIABLES ───────────────── */    
 :root {
     --black: #000;
     --dark: #0f0f0f;
@@ -26,6 +26,11 @@ body {
     line-height: 1.6;
 }
 
+
+
+
+
+
 /* ───────────────── CONTAINER ───────────────── */
 .container {
     width: 90%;
@@ -40,7 +45,7 @@ body {
     top: 0;
     background: rgba(0,0,0,.95);
     z-index: 1000;
-    box-shadow: 0 3px 10px rgba(0,0,0,.6);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.61);
 }
 
 .header .container {
@@ -66,6 +71,9 @@ body {
     color: var(--white);
 }
 
+/* ───────── LOGO O (CONTENEDOR) ───────── */
+
+/* ───────── LOGO O ───────── */
 .logo-o {
     width: 48px;
     height: 48px;
@@ -77,35 +85,61 @@ body {
     margin: 0 6px;
     position: relative;
     overflow: hidden;
+
+    /* llama más chica */
+    --flame-scale: 0.85;
+
     box-shadow:
         0 0 15px rgba(255, 0, 0, 0.6),
         inset 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
-.logo-o .flame {
-    font-size: 1.5rem;
-    animation: flamePulse 1.2s infinite ease-in-out;
-    color: #000;
-}
-
-@keyframes flamePulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1) translateY(-2px); }
-    100% { transform: scale(1); }
-}
-
-.logo-o::after {
-    content: '';
+/* 🔥 LLAMA CENTRADA */
+.logo-flame {
     position: absolute;
-    inset: -20%;
-    background: radial-gradient(circle, rgba(255, 60, 0, 0.6), transparent 70%);
-    animation: smokeMove 3s infinite linear;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%)
+        scale(var(--flame-scale));
+
+    transform-origin: center;
+
+    filter:
+        brightness(0.35)
+        contrast(1.4)
+        saturate(0.2);
+
+    pointer-events: none;
 }
 
-@keyframes smokeMove {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+
+@media (min-width: 1200px) {
+    .logo-o {
+        --flame-scale: 0.9;
+    }
 }
+
+@media (max-width: 768px) {
+    .logo-o {
+        --flame-scale: 0.8;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-o {
+        --flame-scale: 0.75;
+    }
+}
+
 
 .logo-sub {
     font-size: 0.7rem;
@@ -145,6 +179,8 @@ body {
 .nav a:hover::after {
     width: 100%;
 }
+
+
 
 .menu-toggle {
     display: none;
@@ -619,4 +655,69 @@ section h2 {
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* Contenedor del humo, fijo detrás de todo */
+.humo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+/* SVG ocupa todo el contenedor */
+.humo {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Animaciones para las bolitas de humo */
+.smoke1, .smoke2, .smoke3 {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transform-origin: center bottom;
+  filter: blur(6px);
+  opacity: 0.6;
+}
+
+/* Movimiento vertical y escala para simular subida de humo */
+.smoke1 {
+  animation-name: humo1;
+  animation-duration: 6s;
+}
+.smoke2 {
+  animation-name: humo2;
+  animation-duration: 7.5s;
+  animation-delay: 1.5s;
+}
+.smoke3 {
+  animation-name: humo3;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+@keyframes humo1 {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-150px) scale(1.4); opacity: 0; }
+}
+
+@keyframes humo2 {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-180px) scale(1.6); opacity: 0; }
+}
+
+@keyframes humo3 {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-200px) scale(1.8); opacity: 0; }
 }

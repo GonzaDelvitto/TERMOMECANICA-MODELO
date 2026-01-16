@@ -20,37 +20,37 @@
       {
         "icon": "bi-fire",
         "title": "Calderas y Termotanques",
-        "description": "·Mantenimiento y reparación de calderas, termotanques y tanques intermediarios.\n·Automatización de calderas.\n·Soldadura  y cambio de tubos de calderas.",
+        "description": "• Mantenimiento y reparación de calderas, termotanques y tanques intermediarios.\n• Automatización de calderas.\n• Soldadura  y cambio de tubos de calderas.",
         "image": "../img/sistemas.webp"
       },
       {
         "icon": "bi-gear",
         "title": " Quemadores",
-        "description": "·Service integral de quemadores industriales.\n·Reacondicionamiento.\n·Service de emergencia.",
+        "description": "• Service integral de quemadores industriales.\n• Reacondicionamiento.\n•Service de emergencia.",
         "image": "../img/sistemas.webp"
       },
       {
         "icon": "bi-thermometer-half",
         "title": " Soldadura y Reparaciones de Calefacción",
-        "description": "·Reparación de sistemas de losa radiante.\n·Reparación de radiadores.\n·Cambio de cañerías de calefacción.",
+        "description": "• Reparación de sistemas de losa radiante.\n• Reparación de radiadores.\n• Cambio de cañerías de calefacción.",
         "image": "../img/sistemas.webp"
       },
       {
         "icon": "bi-water",
         "title": "Piscinas",
-        "description": "·Climatización de piscinas.\n·Automatización de sistemas de piscina.",
+        "description": "• Climatización de piscinas.\n• Automatización de sistemas de piscina.",
         "image": "../img/climatizacion.webp"
       },
       {
         "icon": "bi-lightning-charge",
         "title": "Automatización y Electricidad",
-        "description": "·Automatización de sistemas de calefacción.\n·Adaptaciones electrónicas y eléctricas.\n·Reparaciones eléctricas asociadas a sistemas térmicos.",
+        "description": "• Automatización de sistemas de calefacción.\n• Adaptaciones electrónicas y eléctricas.\n• Reparaciones eléctricas asociadas a sistemas térmicos.",
         "image": "../img/sistemas.webp"
       },
       {
         "icon": "bi-file-earmark-text",
         "title": "Certificaciones e Informes Técnicos",
-        "description": "·Certificación de calderas y termotanques conforme a normativa vigente y disposiciones de organismos de control.\n·Informe\n·Presupuesto",
+        "description": "• Certificación de calderas y termotanques conforme a normativa vigente y disposiciones de organismos de control.\n• Informe\n• Presupuesto",
         "image": "../img/sistemas.webp"
       }
     ]

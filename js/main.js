@@ -4,7 +4,7 @@ fetch("./data/servicios.json")
 
         /* ───── HERO ───── */
         document.getElementById("heroTitle").textContent = data.hero.title;
-        document.getElementById("heroDescription").textContent = data.hero.description;
+        document.getElementById("heroDescription").innerHTML = data.hero.description;
 
         const heroCta = document.getElementById("heroCta");
         heroCta.textContent = data.hero.ctaText;
@@ -40,6 +40,20 @@ fetch("./data/servicios.json")
 
             const btn = card.querySelector(".leer-mas");
             const texto = card.querySelector(".servicio-text");
+
+            // Esperamos al próximo frame para medir bien alturas
+requestAnimationFrame(() => {
+    const textoCortado = texto.scrollHeight > texto.clientHeight;
+
+    if (!textoCortado) {
+        // Si el texto entra completo, ocultamos el botón
+        btn.style.display = "none";
+    } else {
+        // Si se corta, dejamos visible el botón
+        btn.style.display = "inline-block";
+    }
+});
+
 
             // Añadir id para aria-controls
             texto.id = `desc-${index}`;

@@ -1,10 +1,11 @@
 {
   "hero": {
-    "title": "Soluciones Profesionales en Termomecánica",
-    "description": "Más de 50 años garantizando seguridad, eficiencia y rendimiento en sistemas térmicos para consorcios e industrias.",
-    "ctaText": "Consultar por WhatsApp",
-    "ctaLink": "https://wa.me/5491167309354"
-  },
+  "title": "Soluciones Profesionales en Termomecánica",
+  "description": "Más de 50 años garantizando <strong style=\"color:#c00000;\">seguridad</strong>, <strong style=\"color:#c00000;\">eficiencia</strong> y <strong style=\"color:#c00000;\">rendimiento</strong> en sistemas térmicos para consorcios e industrias.",
+  "ctaText": "TENGO UNA EMERGENCIA",
+  "ctaLink": "https://wa.me/5491167309354?text=%F0%9F%9A%A8%20Tengo%20una%20emergencia%20t%C3%A9cnica.%20Necesito%20asistencia%20inmediata%20por%E2%80%A6"
+},
+
 
 "nosotros": {
   "title": "Sobre Nosotros",
@@ -12,33 +13,49 @@
 },
 
 
+ 
   "servicios": {
     "title": "Áreas de Especialización",
     "items": [
-{
-  "icon": "bi-fire",
-  "title": "Sistemas Centrales de Calefacción y Agua Caliente",
-  "description": "Mantenimiento y reparación de equipos: intervención integral en calderas, termotanques industriales y tanques intermediarios. Emisores de calor: reparación y optimización de sistemas de losa radiante y radiadores. Renovación de infraestructura: cambio y adecuación de cañerías de calefacción con materiales de alta resistencia.",
-  "image": "../img/sistemas.webp"
-},
-{
-  "icon": "bi-lightning-charge",
-  "title": "Ingeniería de Combustión y Electrónica",
-  "description": "Service y reacondicionamiento de quemadores: calibración técnica para optimizar el consumo de combustible y prolongar la vida útil del equipo. Modernización de sistemas: adaptaciones electrónicas y eléctricas para actualizar equipos existentes a estándares modernos de eficiencia. Soporte eléctrico: reparaciones especializadas en tableros y conexiones vinculadas a la termomecánica.",
-  "image": "../img/ingenieria.webp"
-},
-{
-  "icon": "bi-droplet",
-  "title": "Climatización y Control Inteligente",
-  "description": "Climatización de piscinas: instalación y mantenimiento de sistemas térmicos para piscinas. Automatización avanzada: implementación de sistemas de control para automatizar la operación de piscinas y sistemas de calefacción.",
-  "image": "../img/climatizacion.webp"
-}
-
-
-
-
+      {
+        "icon": "bi-fire",
+        "title": "Calderas y Termotanques",
+        "description": "·Mantenimiento y reparación de calderas, termotanques y tanques intermediarios.\n·Automatización de calderas.\n·Soldadura  y cambio de tubos de calderas.",
+        "image": "../img/sistemas.webp"
+      },
+      {
+        "icon": "bi-gear",
+        "title": " Quemadores",
+        "description": "·Service integral de quemadores industriales.\n·Reacondicionamiento.\n·Service de emergencia.",
+        "image": "../img/sistemas.webp"
+      },
+      {
+        "icon": "bi-thermometer-half",
+        "title": " Soldadura y Reparaciones de Calefacción",
+        "description": "·Reparación de sistemas de losa radiante.\n·Reparación de radiadores.\n·Cambio de cañerías de calefacción.",
+        "image": "../img/sistemas.webp"
+      },
+      {
+        "icon": "bi-water",
+        "title": "Piscinas",
+        "description": "·Climatización de piscinas.\n·Automatización de sistemas de piscina.",
+        "image": "../img/climatizacion.webp"
+      },
+      {
+        "icon": "bi-lightning-charge",
+        "title": "Automatización y Electricidad",
+        "description": "·Automatización de sistemas de calefacción.\n·Adaptaciones electrónicas y eléctricas.\n·Reparaciones eléctricas asociadas a sistemas térmicos.",
+        "image": "../img/sistemas.webp"
+      },
+      {
+        "icon": "bi-file-earmark-text",
+        "title": "Certificaciones e Informes Técnicos",
+        "description": "·Certificación de calderas y termotanques conforme a normativa vigente y disposiciones de organismos de control.\n·Informe\n·Presupuesto",
+        "image": "../img/sistemas.webp"
+      }
     ]
   },
+
 
   "diferenciales": {
     "title": "¿Por Qué Elegirnos?",
@@ -52,13 +69,13 @@
 
   "contacto": {
     "title": "¿Necesita Asesoramiento?",
-    "text": "Consultanos sobre nuestros servicios. Analizamos tu necesidad y te damos una solución a medida.",
-    "ctaText": "Hablar con un especialista",
-    "ctaLink": "https://wa.me/5491167309354"
+    "text": "Analizamos tu necesidad y te damos una solución a medida.",
+    "ctaText": "Hablar con un tecnico",
+    "ctaLink": "https://wa.me/5491167309354?text=Hola.%20Quisiera%20realizar%20una%20consulta%20sobre%20un%20servicio."
   },
 
   "footer": {
-    "text": "© 2026 Cosentino · Termomecánica"
+    "text": "© 2026 Cosentino · Termomecánica - Web Designer: Gonza.Dvt"
   },
 
   "whatsapp": {

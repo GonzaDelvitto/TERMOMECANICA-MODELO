@@ -21,37 +21,37 @@
         "icon": "bi-fire",
         "title": "Calderas y Termotanques",
         "description": "• Mantenimiento y reparación de calderas, termotanques y tanques intermediarios.\n• Automatización de calderas.\n• Soldadura  y cambio de tubos de calderas.",
-        "image": "../img/sistemas.webp"
+        "image": "../img/calderas.jpeg"
       },
       {
         "icon": "bi-gear",
         "title": " Quemadores",
         "description": "• Service integral de quemadores industriales.\n• Reacondicionamiento.\n•Service de emergencia.",
-        "image": "../img/sistemas.webp"
+        "image": "../img/quemadores.jpeg"
       },
       {
         "icon": "bi-thermometer-half",
         "title": " Soldadura y Reparaciones de Calefacción",
         "description": "• Reparación de sistemas de losa radiante.\n• Reparación de radiadores.\n• Cambio de cañerías de calefacción.",
-        "image": "../img/sistemas.webp"
+        "image": "../img/img2.jpeg"
       },
       {
         "icon": "bi-water",
         "title": "Piscinas",
         "description": "• Climatización de piscinas.\n• Automatización de sistemas de piscina.",
-        "image": "../img/climatizacion.webp"
+        "image": "../img/piscina.jpeg"
       },
       {
         "icon": "bi-lightning-charge",
         "title": "Automatización y Electricidad",
         "description": "• Automatización de sistemas de calefacción.\n• Adaptaciones electrónicas y eléctricas.\n• Reparaciones eléctricas asociadas a sistemas térmicos.",
-        "image": "../img/sistemas.webp"
+        "image": "../img/automatizacion.jpeg"
       },
       {
         "icon": "bi-file-earmark-text",
         "title": "Certificaciones e Informes Técnicos",
         "description": "• Certificación de calderas y termotanques conforme a normativa vigente y disposiciones de organismos de control.\n• Informe\n• Presupuesto",
-        "image": "../img/sistemas.webp"
+        "image": "../img/certificacion.jpeg"
       }
     ]
   },
@@ -67,12 +67,17 @@
     ]
   },
 
-  "contacto": {
-    "title": "¿Necesita Asesoramiento?",
-    "text": "Analizamos tu necesidad y te damos una solución a medida.",
-    "ctaText": "Hablar con un tecnico",
-    "ctaLink": "https://wa.me/5491167309354?text=Hola.%20Quisiera%20realizar%20una%20consulta%20sobre%20un%20servicio."
-  },
+ "contacto": {
+  "title": "¿Necesita Asesoramiento?",
+  "text": "Analizamos tu necesidad y te damos una solución a medida.",
+  "ctaText": "Hablar con un técnico",
+  "ctaLink": "https://wa.me/5491167309354?text=Hola.%20Quisiera%20realizar%20una%20consulta%20sobre%20un%20servicio.",
+  "email": {
+    "label": "O escribinos por correo",
+    "address": "cosentinotermomecanica@gmail.com",
+    "link": "mailto:cosentinotermomecanica@gmail.com"
+  }
+},
 
   "footer": {
     "text": "© 2026 Cosentino · Termomecánica - Web Designer: Gonza.Dvt"

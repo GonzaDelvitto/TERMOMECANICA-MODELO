@@ -121,6 +121,12 @@ requestAnimationFrame(() => {
         contactoCta.textContent = data.contacto.ctaText;
         contactoCta.href = data.contacto.ctaLink;
 
+       document.getElementById("contactoEmailLabel").textContent = data.contacto.email.label;
+const emailLink = document.getElementById("contactoEmail");
+emailLink.textContent = data.contacto.email.address;
+emailLink.href = data.contacto.email.link;
+
+       
         /* ───── FOOTER ───── */
         document.getElementById("footerText").textContent = data.footer.text;
 
@@ -187,6 +193,5 @@ document.addEventListener("click", (e) => {
         });
     }
 });
-
 
 

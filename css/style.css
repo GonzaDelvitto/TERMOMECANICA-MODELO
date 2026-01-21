@@ -40,7 +40,7 @@ body {
 
 /* ───────────────── HEADER / NAV ───────────────── */
 .header {
-    position: fixed;
+   position: fixed;
     width: 100%;
     top: 0;
     background: rgba(0,0,0,.95);
@@ -192,7 +192,11 @@ body {
 .hero {
     padding: 9rem 0 5rem;
     text-align: center;
-    background: linear-gradient(135deg, #000, #111);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.526), rgb(4, 4, 4)), url(/img/imgfondo.jpeg);
+    background-size: contain;
+    background-position: center 65%; /* ⬅ imagen un poco más abajo */
+    background-repeat: no-repeat;
+    background-color: #fff; /* rellena los espacios */
 }
 
 .hero h2 {
@@ -253,21 +257,17 @@ section h2 {
     overflow: hidden;
     display: flex;
     align-items: flex-end;
+ background: var(--bg);
+    background-size: cover;
+    background-position: center;
+    filter: contrast(1.05) saturate(1.05);
 
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,.9),
-            rgba(0,0,0,.3)
-        ),
-        var(--bg);
 
     background-size: cover;
     background-position: center;
-
-    box-shadow: 0 22px 45px rgba(0,0,0,.65);
-    transition: transform .35s ease, box-shadow .35s ease;
 }
+
+   
 
 /* Overlay principal para legibilidad */
 .servicio-card::after {
@@ -276,19 +276,25 @@ section h2 {
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0,0,0,.96) 20%,
-        rgba(0,0,0,.75) 50%,
-        rgba(0,0,0,.35) 75%,
-        rgba(0,0,0,.15) 100%
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.85) 35%,
+        rgba(0,0,0,0.55) 60%,
+        rgba(0,0,0,0.25) 80%,
+        rgba(0,0,0,0) 100%
     );
+    opacity: 1;
     transition: opacity .35s ease;
+    pointer-events: none;
 }
+
+
 
 /* Contenido */
 .servicio-content {
     position: relative;
     z-index: 2;
     padding: 2.2rem;
+     padding-bottom: 2.8rem; /* 🔑 espacio extra abajo */
     width: 100%;
     transition: transform .35s ease;
     white-space: pre-line;
@@ -325,11 +331,11 @@ section h2 {
 }
 
 .servicio-card:hover::after {
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .servicio-card:hover .servicio-content {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 }
 
 /* ───────── Mobile adjustments ───────── */
@@ -532,8 +538,12 @@ section h2 {
         font-size: 0.85rem;
         line-height: 1.3;
     }
+
+    
 }
 
+
+  
 @media (max-width: 480px) {
     .diferenciales {
         padding: 2rem 1rem;
@@ -568,6 +578,79 @@ section h2 {
 .contacto p {
     color: var(--gray);
     margin-bottom: 2rem;
+}
+
+/* ───────── CONTACTO EMAIL ───────── */
+
+/* ───────── CARD EMAIL CONTACTO ───────── */
+
+.contacto-card-email {
+  margin: 2.5rem auto 0;
+    padding: 1.4rem 1.6rem;
+    max-width: 420px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    backdrop-filter: blur(6px);
+    transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
+}
+
+/* Hover */
+.contacto-card-email:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(192, 0, 0, 0.5);
+}
+
+/* Ícono */
+.contacto-card-email i {
+    font-size: 2rem;
+    color: var(--red);
+    flex-shrink: 0;
+}
+
+/* Texto */
+.contacto-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+#contactoEmailLabel {
+    font-size: 0.85rem;
+    color: var(--gray);
+    letter-spacing: 0.4px;
+}
+
+#contactoEmail {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+#contactoEmail:hover {
+    color: var(--red);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .contacto-card-email {
+        padding: 1.2rem;
+        border-radius: 14px;
+    }
+
+    #contactoEmail {
+        font-size: 0.95rem;
+        word-break: break-word;
+    }
 }
 
 /* ───────────────── FOOTER ───────────────── */
